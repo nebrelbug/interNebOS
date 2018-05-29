@@ -19,7 +19,7 @@ build/os.iso: build/kernel.bin grub.cfg
 	cp build/kernel.bin build/isofiles/boot/
 	grub-mkrescue -o build/os.iso build/isofiles
 
-build: os.iso
+build: build/os.iso
 
 run: build/os.iso
 	qemu-system-x86_64 -cdrom build/os.iso
